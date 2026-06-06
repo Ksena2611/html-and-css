@@ -1,0 +1,125 @@
+html { box-sizing: border-box; }
+*, ::before, ::after { box-sizing: inherit; }
+
+:root {
+  --page-bg-color: #f5f5f7;
+  --gradient-start: #f7a2a1;
+  --gradient-end: #ffed00;
+  --avatar-border-color: #ffffff40;
+  --button-color: #5fc52e;
+  --button-color: #3eb489;
+  --field-border-color: #d5d5d7;
+  --field-radius: 4px;
+  --radius: 12px;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  background: var(--page-bg-color);
+}
+
+
+.registration {
+  display: flex;
+  width: 800px;
+}
+
+.registration__visual {
+  flex: 0 0 300px;
+  padding: 60px;
+  background: linear-gradient(to top, var(--gradient-start), var(--gradient-end));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: var(--radius) 0 0 var(--radius);
+}
+
+.registration__form {
+  flex: 0 0 500px;
+  padding: 60px;
+  background: white;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.registration__avatar {
+  width: 150px;
+  border: 10px solid #ffffff60;
+  border-radius: 50%;
+}
+
+.registration__title {
+  font-size: 1.4rem;
+  margin: 30px 0 10px 0;
+}
+
+.registration__description {
+  margin: 10px 0 0 0;
+  font-size: 0.85rem;
+  color: #000000c0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form__flex {
+  display: flex;
+  gap: 20px;
+}
+
+.form__field--checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form__field label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.form__field input[type="text"],
+.form__field input[type="tel"],
+.form__field input[type="email"],
+.form__field input[type="date"] {
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid var(--field-border-color);
+  border-radius: var(--field-radius);
+}
+
+.form__field input[type="checkbox"] {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid var(--field-border-color);
+  border-radius: var(--field-radius);
+}
+
+.form__field a {
+  color: black;
+}
+
+button {
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  padding: 10px;
+  border: 0;
+  background: var(--button-color);
+  color: white;
+  border-radius: var(--field-radius);
+}

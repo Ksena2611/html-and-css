@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrační formulář</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="registration">
+    <div class="registration__visual">
+      <img class="registration__avatar" src="images/avatar.jpg" alt="">
+      <h1 class="registration__title">Nastavení účtu</h1>
+      <p class="registration__description">Stačí pár minut a tvůj chytrý náramek bude připraven.</p>
+    </div>
+    <div class="registration__form">
+
+      <form class="form">
+
+        <div class="form__flex">
+          <div class="form__field">
+            <label for="firstname">Jméno</label>
+            <input type="text" name="firstname" id="firstname">
+          </div>
+          <div class="form__field">
+            <label for="lastname">Příjmení</label>
+            <input type="text" name="lastname" id="lastname">
+          </div>
+        </div>
+
+        <div class="form__field">
+          <label for="dateofbirth">Datum narození</label>
+          <input type="date" name="dateofbirth" id="dateofbirth">
+        </div>
+
+        <div class="form__field">
+          <label for="email">E-mail</label>
+          <input type="email" name="email" id="email">
+        </div>
+
+        <div class="form__field">
+          <label for="phone">Telefon</label>
+          <input type="tel" name="phone" id="phone" placeholder="+420">
+        </div>
+
+        <div class="form__field form__field--checkbox">
+          <input type="checkbox" name="consent" id="consent">
+          <label for="consent">Souhlasím s <a href="#">obchodními podmínkami</a></label>
+        </div>
+
+        <div class="form__flex">
+          <button type="submit">Zaregistrovat</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+/* Зміна кольору всього тексту та загальний фон */
+body {
+    color: rgb(12, 15, 14);
+    background-color: aqua;
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.5;
+    font-family: "Raleway", sans-serif;
+  
+}
+
+/* Налаштовуємо колір шрифта заголовків та емейл */
+
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+    color: beige;
+    margin: 0;
+    text-shadow: 0 3px 50px rgb(6, 10, 9);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(244, 241, 248);
+}
+    
+/* Можемо змінити жирність та стиль надпису
+    font-weight - товщина шрифта
+    font-style - стиль шрифта 
+    font-family - зміна шрифта
+    text-align - зміна положення тексту*/
+h2 {
+    font-size: 48px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    margin-top: 0;
+    color: rgb(98, 13, 13);
+}
+h3 {
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: "Playfair Display", serif;
+    text-align: center;
+}
+ 
+/* Змінимо стиль надпису нашого емейлу на курсив */
+a {
+    font-style: italic;
+    color: rgb(18, 168, 23);
+}
+
+/* Це можемо використовувати, якщо хочемо змінити фон окремо по кожній секції, але в html потрібно дописати, там де section- section class "pruh" */
+/* .pruh {
+    background-color: rgb(223, 247, 104);
+} */
+
+
+/* Частини, які розділені на сектори в html підписуємо section class..., та в css посекторно змінюємо колір */
+
+.městaUkrajiny,
+.Kontakt {
+    background-color: rgb(115, 247, 247);
+}
+
+.paticka {
+    background-color:rgb(8, 73, 73);
+    text-align: center;
+    padding: 10px 0 ;
+    margin: 100px 0 0 0;
+    color: azure;
+}
+
+/* Редагуємо фото, в html пишемо  img class= "foto-osnova"...  */
+.foto-osnova{
+    width: 350px;
+    border-radius: 0 50px 50px 0;
+    float: left;
+    margin: 0 30px 30px 0;
+}
+
+.foto-Základníúdaje {
+    width: 250px;
+    border-radius: 50%;
+    float: right;
+    margin: 30px 150px 30px 30px;
+}
+.foto-Kontakt {
+    width: 250px;
+    border-radius: 50px 0 50px 0;
+    float: left;
+    
+    margin: 0 50px 10px 100px;
+
+    /* padding: 0 50px 0px 0px; */
+}
+
+
+/* Щоб не писати біля кожного img в html, копіюємо назву секції та дописуємо img, в css, якщо хочемо зробити більше фото в одному рядку вибираємо згідно % */
+/* width-ширина у % пропорційно сторінки
+   border- рамка, solid-рівна рамка 
+   border radius-обрізання кутів на картинці*/
+.městaUkrajiny img {
+    width: 32%;
+    border: 5px solid rgb(159, 225, 216);
+    border-radius: 10px;
+}
+
+
+/* ТАБЛИЦЯ */
+
+table{
+    border-spacing: 0;
+    margin: 20px 20px 20px 100px;
+}
+th{
+   border-bottom: 1px solid black;
+   text-align: left; 
+   padding: 10px;
+} 
+
+td {
+   border-bottom: 1px solid black; 
+   text-align: right;
+   padding-left: 50px;
+}
+
+/* Відступи padding */
+
+section{
+    padding: 20px 10%;
+}
+
+
+/* ВЕРШЕЧЕК */
+.Hlavicka{
+    background-image: url(obrazky/голова.jpg);
+    padding: 150px 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover 
+}
+
+      /* МЕНЮ  КНОПКА */
+
+.menu{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: rgb(8, 73, 73);
+}
+.menu li {
+display: inline-block;
+}
+
+.menu a {
+    display: inline-block;
+    color: ghostwhite;
+    text-decoration: none;
+    padding: 20px 30px;
+}
+.menu a:hover,
+.menu a:focus,
+.menu a:active {
+    background-color: #1e1917
+}

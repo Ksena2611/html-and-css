@@ -1,0 +1,117 @@
+html { box-sizing: border-box; }
+*, ::after, ::before { box-sizing: inherit; }
+
+:root {
+  --page-bg-color: #a19393;
+  --header-bg-color: #5f5455;
+  --dog-bg-color-1: #e5e6e4;
+  --dog-bg-color-2: #cfd2cd;
+}
+
+body {
+  margin: 0;
+  padding-top: 75px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  background: var(--page-bg-color);
+  color: white;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--header-bg-color);
+  color: white;
+}
+
+.logo {
+  font-size: 1.3em;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu__link {
+  font-weight: 600;
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu__link:hover,
+.menu__link:focus {
+  background: white;
+  color: var(--header-bg-color);
+  border-radius: 10px;
+}
+
+
+.content {
+  width: 760px;
+  margin-inline: auto;
+}
+
+.intro,
+.outro {
+  margin-block: 60px;
+}
+
+.intro__title {
+  margin-top: 0;
+	font-size: 2em;
+	text-align: center;
+}
+
+.dog {
+  margin-block: 60px;
+  display: flex;
+  gap: 30px;
+}
+
+.dog:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.dog__image {
+  width: 200px;
+  text-align: center;
+}
+
+.dog__image img {
+  position: sticky;
+  top: 90px;
+}
+
+.dog__description {
+  padding: 40px;
+  border-radius: 20px 20px 80px 20px;
+  color: black;
+  background: var(--dog-bg-color-1);
+}
+
+.dog:nth-child(odd) .dog__description {
+  border-radius: 20px 20px 20px 80px;
+  background: var(--dog-bg-color-2);
+}
+
+.dog__description :first-child {
+  margin-top: 0;
+}
+
+.dog__description :last-child {
+  margin-bottom: 0;
+}
+
+

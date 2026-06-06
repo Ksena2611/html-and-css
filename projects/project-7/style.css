@@ -1,0 +1,138 @@
+html { box-sizing: border-box; }
+*, ::before, ::after { box-sizing: inherit; }
+
+:root {
+  --padding: 20px;  /* padding pro popisek zákusku */
+  --desert-spacing: 30px;  /* rozestup mezi zákusky */
+  --radius: 12px; /* zakulacení rohů kartičky */
+
+  --page-bg-color: #f9f9f7;
+
+  --description-color: #888880; /* popis zákusku */
+
+  /* barvy stínů pro jednotlivé zákusky */
+  --strawberry-shadow-color: #e4b0a5a0;
+  --cupcake-shadow-color: #947293a0;
+  --matcha-shadow-color: #8dae7fa0;
+  --tiramisu-shadow-color: #bc906da0;
+}
+
+body {
+  padding: var(--padding);
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  background: var(--page-bg);
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header__title {
+  font-family: "Playfair", serif;
+  font-optical-sizing: auto;
+  font-size: 4rem;
+  text-align: center;
+  margin-block: 0;
+}
+
+.header__text {
+  font-size: 18px;
+  color: var(--description-color);
+  margin-block: 0;
+}
+
+
+/* MOBIL */
+.deserts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--desert-spacing);
+}
+
+.desert {
+  background: white;
+  border-radius: var(--radius);
+}
+
+.desert__image {
+  display: block;
+  width: 100%;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.desert__content {
+  padding: var(--padding);
+}
+
+.desert__title {
+  margin-top: 0;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.desert__description {
+  margin-bottom: 0;
+  font-size: 15px;
+  color: var(--description-color);
+}
+
+
+.desert--strawberry {
+  box-shadow: 3px 5px 30px var(--strawberry-shadow-color);
+}
+
+.desert--cupcake {
+  box-shadow: 3px 5px 30px var(--cupcake-shadow-color);
+}
+
+.desert--matcha {
+  box-shadow: 3px 5px 30px var(--matcha-shadow-color);
+}
+
+.desert--tiramisu {
+  box-shadow: 3px 5px 30px var(--tiramisu-shadow-color);
+}
+
+
+
+/* TABLET */
+@media (min-width: 660px) {
+
+  .deserts {
+    max-width: 700px;
+    margin-inline: auto;
+  }
+
+  .desert {
+    display: flex;
+  }
+
+  .desert__image {
+    width: 30%;
+    flex-shrink: 0; /* kvůli Firefoxu */
+    border-radius: var(--radius) 0 0 var(--radius);
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1100px) {
+
+  .deserts {
+    max-width: 1200px;
+    flex-direction: row;
+  }
+
+  .desert {
+    flex: 1 1 25%;
+    display: block;
+  }
+
+  .desert__image {
+    width: 100%;
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+
+}

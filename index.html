@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Stará kniha — Moje projekty</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ÚVODNÍ OBRAZOVKA -->
+  <div id="introScreen" class="intro-screen">
+    <div class="intro-content">
+      <div class="book-ornament">✦</div>
+      <h1 class="title">HTML a CSS</h1>
+      <p class="subtitle">Moje projekty</p>
+
+      <button id="openBtn" class="open-button">
+        Otevřít projekt
+      </button>
+
+      <div class="book-ornament bottom">✦</div>
+    </div>
+  </div>
+
+  <!-- KNIHA -->
+  <div class="book">
+
+    <!-- LEVÁ STRANA -->
+    <div class="page left">
+      <h1 id="projectTitle">Projekt</h1>
+
+      <div id="projectImage" class="content">
+        <img id="projectImg" src="projects/project1/ložnice%202.jpg" alt="Náhled projektu">
+      </div>
+    </div>
+
+    <!-- PRAVÁ STRANA -->
+    <div class="page right">
+
+      <div class="right-content">
+        <h2>Kód projektu</h2>
+
+        <div class="buttons">
+          <button id="htmlBtn">HTML</button>
+          <button id="cssBtn">CSS</button>
+        </div>
+      </div>
+
+      <!-- OKNO KÓDU -->
+      <div class="code-window">
+        <button id="copyBtn" class="copy-btn">Kopírovat</button>
+        <pre><code id="codeDisplay"></code></pre>
+      </div>
+
+      <!-- NAVIGACE -->
+      <div class="nav-buttons">
+        <button id="prevProject">◀ Předchozí</button>
+        <button id="nextProject">Další ▶</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

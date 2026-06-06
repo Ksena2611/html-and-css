@@ -1,0 +1,168 @@
+html { box-sizing: border-box; }
+*, ::before, ::after { box-sizing: inherit; }
+
+:root {
+  --page-bg-color: #ffe5d9;
+  --header-bg-color: #9d8189;
+
+  --title-color: #594b4f;
+  --subtitle-color: #9d8189;
+
+  --button-bg-color: #9d8189;
+  --button-active-bg-color: #594b4f;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  line-height: 1.4;
+  background: var(--page-bg-color);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+/* container */
+.container {
+  padding-inline: 20px;
+}
+
+@media (min-width: 100px) {
+  .container {
+    max-width: 1000px;
+    margin-inline: auto;
+  }
+}
+
+/* sekce */
+section {
+  padding-block: 50px;
+}
+
+
+/* logo */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  font-size: 1.5rem;
+}
+
+.logo img {
+  height: 40px;
+}
+
+
+/* tlačítko */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  border-radius: 100vw;
+  background: var(--button-bg-color);
+}
+
+.button:hover,
+.button:focus {
+  background: var(--button-active-bg-color);
+}
+
+
+/* hlavička */
+.header {
+  background: var(--header-bg-color);
+  color: white;
+  padding-block: 20px;
+}
+
+.header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 1000px) {
+  .header .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+
+/* menu */
+.menu {
+  margin-top: 20px;
+  display: flex;
+}
+
+.menu__link {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  border-radius: 100vw;
+}
+
+.menu__link:hover,
+.menu__link:focus {
+  background: #ffffff40;
+}
+
+@media (min-width: 1000px) {
+  .menu {
+    margin-top: 0;
+  }
+}
+
+
+/* jogové pozice */
+.pose {
+  background: white;
+  border-radius: 8px;
+}
+
+.pose + .pose {
+  margin-top: 30px;
+}
+
+.pose__image {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+}
+
+.pose__content {
+  padding: 20px;
+}
+
+.pose__title {
+  margin-top: 0;
+  color: var(--title-color);
+}
+
+.pose__subtitle {
+  color: var(--subtitle-color);
+}
+
+
+@media (min-width: 1000px) {
+  .poses .container {
+    display: flex;
+    gap: 30px;
+  }
+
+  .pose {
+    display: block;
+    flex: 1 1 33.33%;
+  }
+
+  .pose + .pose {
+    margin-top: 0;
+  }
+}
+

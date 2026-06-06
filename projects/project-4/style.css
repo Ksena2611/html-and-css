@@ -1,0 +1,131 @@
+html { box-sizing: border-box; }
+*, ::before, ::after { box-sizing: inherit; }
+
+:root {
+  --font-base: "Source Sans 3", sans-serif;
+  --font-special: "Montserrat", sans-serif;
+
+  --color-page-bg: #444444;
+  --color-visual-bg: #f0f0f0;
+}
+
+
+body {
+  font-family: var(--font-base);
+  font-optical-sizing: auto;
+  margin: 0;
+  background: var(--color-page-bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-special);
+  font-optical-sizing: auto;
+}
+
+.container {
+  width: 1040px;
+  margin-inline: auto;
+  background: white;
+}
+
+.header {
+  font-family: var(--font-special);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 28px;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+.menu__item {
+  font-family: var(--font-special);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+
+
+.banner {
+  height: 400px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: url(images/banner.jpg) no-repeat center/cover;
+
+  font-family: var(--font-special);
+  color: white;
+}
+
+.banner__title {
+  font-size: 48px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.banner__description {
+  font-size: 24px;
+  margin: 0;
+}
+
+
+.shop {
+  padding: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.shop__item {
+  width: 25%;
+}
+
+.shop__image {
+  width: 100%;
+}
+
+.shop__price {
+  font-family: var(--font-special);
+  font-weight: 600;
+  font-size: 20px;
+}
+
+
+.visual {
+  display: flex;
+}
+
+.visual__content {
+  width: 50%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--color-visual-bg);
+}
+
+.visual__title {
+  font-size: 36px;
+  font-weight: 300;
+}
+
+.visual__description {
+  font-size: 20px;
+}
+
+.visual__photo {
+  width: 50%;
+}
+
+.visual__image {
+  display: block;
+  width: 100%;
+}

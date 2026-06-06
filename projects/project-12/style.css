@@ -1,0 +1,455 @@
+html { box-sizing: border-box; }
+*, ::before, ::after { box-sizing: inherit; }
+
+/* =========================
+   PROMĚNNÉ (VARIABLES)
+========================= */
+
+:root {
+  --color-primary: #ec5600;
+  --color-primary-dark: #db5000;
+  --color-secondary: #4d592b;
+  --color-secondary-dark: #414536;
+  --color-secondary-light: #adb29e;
+  --color-secondary-bright: #e2e4d9;
+  --color-section-bg: #f5f5f1;
+  --color-text: #172126;
+  --color-footer-bg: #2c2f24;
+
+  --radius: 12px;
+}
+
+/* =========================
+   ZÁKLADNÍ STYLY
+========================= */
+
+body {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+/* =========================
+   NADPISY
+========================= */
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  h1 { font-size: 4rem; }
+}
+
+@media (min-width: 1100px) {
+  h1 { font-size: 5rem; }
+}
+
+h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  h2 { font-size: 3rem; }
+}
+
+@media (min-width: 1100px) {
+  h2 { font-size: 3.5rem; }
+}
+
+h3 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* =========================
+   SEKCE
+========================= */
+
+section,
+footer {
+  padding: 50px 0;
+}
+
+@media (min-width: 768px) {
+  section,
+  footer {
+    padding: 80px 0;
+  }
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 1100px;
+  }
+}
+
+/* =========================
+   TLAČÍTKO
+========================= */
+
+.button {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--color-primary);
+  border-radius: 100vw;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--color-primary-dark);
+}
+
+@media (min-width: 768px) {
+  .button {
+    padding: 20px 40px;
+    font-size: 1.125rem;
+  }
+}
+
+/* =========================
+   HLAVIČKA
+========================= */
+
+.header {
+  padding: 20px 0;
+}
+
+.header__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  height: 35px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+
+.nav__link {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--color-secondary-dark);
+  border-radius: 100vw;
+  transition: background-color 0.2s ease;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+  background-color: var(--color-secondary-bright);
+}
+
+@media (min-width: 768px) {
+  .header__content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav__link {
+    padding: 10px 20px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .nav__link {
+    padding: 15px 30px;
+  }
+
+  .logo {
+    height: 45px;
+  }
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  background-image: url("images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 0;
+  
+}
+
+
+.hero .container {
+  text-align: center;
+}
+
+.hero h1 {
+  margin-bottom: 30px;
+}
+
+.hero p {
+  margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 120px 0;
+  }
+
+  .hero p {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .hero {
+    padding: 150px 0;
+  }
+}
+
+/* =========================
+   MENU
+========================= */
+
+.menu .container {
+  text-align: center;
+   
+}
+
+.menu h2 {
+  margin: 0 0 40px 0;
+}
+
+.menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+    
+}
+
+
+.menu__item {
+  padding: 30px 20px;
+  border: 1px solid var(--color-secondary-bright);
+  border-radius: var(--radius);
+  text-align: center;
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.menu__item img {
+  width: 40px;
+  height: 40px;
+}
+
+.menu__item h3 {
+  margin: 0;
+  color: var(--color-secondary);
+}
+
+.menu__item p {
+  margin: 0;
+}
+
+.menu__item a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.menu__item a:hover,
+.menu__item a:focus {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .menu__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .menu__item {
+    width: calc((100% - 30px) / 2);
+  }
+}
+
+@media (min-width: 1100px) {
+  .menu__list {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .menu__item {
+    width: calc((100% - 90px) / 4);
+  }
+}
+
+/* =========================
+   ROZVOZ
+========================= */
+
+.delivery {
+  background-color: var(--color-section-bg);
+}
+
+.delivery__columns {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.delivery picture img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+.delivery ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.delivery li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-secondary-dark);
+}
+
+.delivery li img {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.delivery h2 {
+  margin-bottom: 40px;
+}
+
+.delivery p {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .delivery__columns {
+    flex-direction: row;
+    gap: 60px;
+  }
+
+  .delivery__columns > * {
+    flex: 1;
+  }
+
+  .delivery picture img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* =========================
+   PATIČKA
+========================= */
+
+.footer {
+  background-color: var(--color-footer-bg);
+  color: var(--color-secondary-light);
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer img {
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.footer a {
+  color: var(--color-secondary-bright);
+  text-decoration: none;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer ul li a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer__content > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@media (min-width: 768px) {
+  .footer__content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer__content > div:last-child {
+    align-items: flex-start;
+  }
+
+  .footer ul {
+    flex-wrap: nowrap;
+  }
+}

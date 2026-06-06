@@ -1,0 +1,49 @@
+html { box-sizing: border-box; }
+*, ::before, ::after { box-sizing: inherit; }
+
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 1.125rem;
+  padding: 50px;
+}
+
+/*
+Nákupní seznam:
+- nastyluj seznam tak, aby vypadal jako to-do list
+- před každou položkou bude prázdný čtvereček
+- položky, které mají class="done", budou mít ve čtverečku textové emoji ✔️
+*/
+
+.todo {
+  list-style: none;
+  padding: 0;
+  max-width: 300px;
+}
+
+.todo li {
+  border-bottom: 1px solid silver;
+  padding-block: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo li::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border: 1px solid silver;
+  border-radius: 4px;
+}
+.todo .done {
+  color: silver;
+}
+
+.todo .done::before {
+  content: "✔️";
+}
+
+
