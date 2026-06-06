@@ -250,7 +250,7 @@ button:hover {
   }
 }
 
-/* ==================== RESPONSIVITA: MOBILNÍ TELEFONY ==================== */
+/* ==================== RESPONSIVITA: MOBILNÍ TELEFONY (VČETNĚ iOS/SAFARI) ==================== */
 @media (max-width: 768px) {
   body {
     height: auto;
@@ -274,15 +274,21 @@ button:hover {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   }
 
-  /* Vnitřní scrollování náhledu na mobilu */
+  /* Oprava fixního zobrazení a scrollování náhledu pro Safari na iPhone */
   #projectImage {
-    max-height: 450px;     /* Omezení výšky, aby okno nezabralo celou obrazovku */
-    overflow-y: auto;      /* Umožňuje listovat screenshotem uvnitř rámečku */
+    display: block;        /* Přepis z flex na block řeší iOS chyby výšky */
+    max-height: 400px;     /* Fixní limit výšky okna na mobilu */
+    overflow-y: auto;      /* Povolení vnitřního listování screenshotem */
+    -webkit-overflow-scrolling: touch; /* Zajišťuje dokonale plynulý scroll na iOS */
+    margin-top: 15px;
+    padding-right: 5px;
   }
 
   #projectImage img {
     width: 100%;
     height: auto;
+    display: block;        /* Odstraňuje nechtěné spodní mezery obrázku */
+    object-fit: contain;
   }
 
   /* Tlačítka a navigace na mobilu */
@@ -326,6 +332,6 @@ button:hover {
   }
 
   #projectImage {
-    max-height: 350px;     /* Menší okno náhledu pro malé obrazovky */
+    max-height: 350px;     /* Menší okno náhledu pro velmi malé obrazovky */
   }
 }
