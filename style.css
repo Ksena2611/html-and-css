@@ -1,3 +1,4 @@
+/* ==================== GLOBÁLNÍ STYLY ==================== */
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +14,7 @@ body {
   font-family: 'EB Garamond', serif;
 }
 
-/* ==================== ТИТУЛЬНА СТОРІНКА ==================== */
+/* ==================== ÚVODNÍ OBRAZOVKA (TITULNÍ STRANA) ==================== */
 .intro-screen {
   position: fixed;
   inset: 0;
@@ -21,10 +22,8 @@ body {
   justify-content: center;
   align-items: center;
   background: 
-
-    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
     url("obrazky/FwYzI.jpg") center/cover no-repeat;
-
   color: white;
   text-align: center;
   z-index: 1000;
@@ -37,7 +36,7 @@ body {
   border: 8px solid #d4b88a;
   background: rgba(26, 15, 8, 0.78);
   border-radius: 12px;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.9);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9);
 }
 
 .book-ornament {
@@ -52,7 +51,7 @@ body {
   font-size: 3rem;
   font-weight: 700;
   margin: 15px 0 8px 0;
-  text-shadow: 0 6px 25px rgba(0,0,0,0.95);
+  text-shadow: 0 6px 25px rgba(0, 0, 0, 0.95);
   letter-spacing: 6px;
   color: #f5e6c8;
 }
@@ -74,7 +73,7 @@ body {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
   transition: all 0.3s ease;
 }
 
@@ -84,12 +83,12 @@ body {
   box-shadow: 0 15px 35px rgba(236, 187, 124, 0.5);
 }
 
-/* ==================== КНИГА ==================== */
+/* ==================== KNIHA (PORTFOLIO) ==================== */
 .book {
   display: none;
   width: 1060px;
   height: 680px;
-  box-shadow: 0 40px 100px rgba(0,0,0,0.9);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.9);
   border-radius: 12px;
   overflow: hidden;
   background: #1a0f08;
@@ -102,27 +101,41 @@ body {
   flex-direction: column;
 }
 
-/* Ліва сторінка */
+/* --- Levá strana (Náhled projektu) --- */
 .left {
   background: linear-gradient(#f5e6c8, #e8d3a1);
   color: #151514ca;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.left h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+#projectImage {
+  flex: 1;
+  overflow-y: auto;        /* Vertikální posun pro dlouhé screenshoty webů */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Zarovnání dlouhých obrázků odshora dolů */
+  margin-top: 15px;
+  padding-right: 5px;      /* Prostor pro estetický scrollbar */
 }
 
 #projectImage img {
   width: 100%;
-  object-fit: cover;
+  height: auto;            /* Automatická výška podle proporcí screenshotu */
+  object-fit: contain;     /* Obrázek se přizpůsobí bez ořezávání okrajů */
   border: 6px solid #8b6a3e;
   border-radius: 6px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
 }
 
-#projectImage {
-  overflow-y: auto;
-  flex: 1;
-}
-
-/* Права сторінка */
+/* --- Pravá strana (Zobrazení kódu) --- */
 .right {
   background: linear-gradient(#f5e6c8, #e8d3a1);
   color: #2b1d0e;
@@ -136,15 +149,15 @@ body {
 
 .right h2 {
   font-family: 'Cinzel', serif;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-size: 2rem;
 }
 
 .buttons {
-  margin: 30px 0;
+  margin: 20px 0;
 }
 
-/* Кнопки */
+/* --- Obecné styly pro tlačítka --- */
 button {
   padding: 12px 28px;
   margin: 0 10px;
@@ -163,7 +176,7 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* Вікно коду */
+/* --- Okno se zdrojovým kódem --- */
 .code-window {
   position: relative;
   flex: 1;
@@ -181,10 +194,12 @@ button:hover {
   padding: 15px;
   overflow: auto;
   color: #00ff9d;
+  font-family: monospace;
   font-size: 0.9rem;
   line-height: 1.4;
 }
 
+/* --- Tlačítko Kopírovat --- */
 .copy-btn {
   position: absolute;
   top: 10px;
@@ -203,7 +218,7 @@ button:hover {
   background: #3a2412;
 }
 
-/* Навігація */
+/* --- Spodní navigace (Předchozí / Další) --- */
 .nav-buttons {
   display: flex;
   justify-content: space-between;
@@ -215,13 +230,18 @@ button:hover {
   padding: 10px 16px;
 }
 
+/* ==================== RESPONSIVITA: NOTEBOOKY & TABLETY ==================== */
+@media (max-width: 1100px) {
+  .book {
+    width: 95%;            /* Šířka knihy se plynule přizpůsobuje displeji */
+    height: 650px;
+  }
+}
 
-/* ===================== TABLET ===================== */
 @media (max-width: 1024px) {
   .book {
-    width: 95%;
     height: auto;
-    flex-direction: column;
+    flex-direction: column; /* Stránky se řadí pod sebe */
   }
 
   .page {
@@ -230,73 +250,82 @@ button:hover {
   }
 }
 
-/* ===================== MOBILE ===================== */
+/* ==================== RESPONSIVITA: MOBILNÍ TELEFONY ==================== */
 @media (max-width: 768px) {
-
   body {
     height: auto;
-    padding: 20px 0;
+    padding: 10px 0;
   }
 
   .book {
     flex-direction: column;
     width: 95%;
     height: auto;
+    background: transparent; /* Odstranění tmavého pozadí na mobilech */
+    box-shadow: none;
   }
 
-  /* СТОРІНКИ ОДНА ПІД ОДНОЮ */
   .page {
     width: 100%;
     min-height: auto;
-    padding: 20px;
+    padding: 20px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;   /* Mezera mezi náhledem a kódem na mobilu */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   }
 
-  /* ЗОБРАЖЕННЯ */
+  /* Vnitřní scrollování náhledu na mobilu */
+  #projectImage {
+    max-height: 450px;     /* Omezení výšky, aby okno nezabralo celou obrazovku */
+    overflow-y: auto;      /* Umožňuje listovat screenshotem uvnitř rámečku */
+  }
+
   #projectImage img {
-    max-height: 300px;
+    width: 100%;
+    height: auto;
   }
 
-  /* КНОПКИ */
+  /* Tlačítka a navigace na mobilu */
   .buttons {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin: 20px 0;
   }
 
   button {
     width: 100%;
     margin: 0;
+    padding: 14px;         /* Větší plocha pro pohodlné klikání prstem */
   }
 
-  /* КОД */
   .code-window {
-    height: 250px;
+    height: 300px;         /* Fixní výška okna s kódem na mobilu */
   }
 
-  /* НАВІГАЦІЯ */
   .nav-buttons {
     flex-direction: column;
     gap: 10px;
   }
-
-  .nav-buttons button {
-    width: 100%;
-  }
 }
 
-/* ===================== SMALL MOBILE ===================== */
+/* ==================== RESPONSIVITA: MALÉ SMARTPHONY ==================== */
 @media (max-width: 480px) {
-
   .title {
-    font-size: 2rem;
-    letter-spacing: 3px;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
   }
 
   .subtitle {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .intro-content {
-    padding: 25px;
+    padding: 30px 20px;
+    width: 90%;
+  }
+
+  #projectImage {
+    max-height: 350px;     /* Menší okno náhledu pro malé obrazovky */
   }
 }
